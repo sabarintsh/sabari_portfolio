@@ -22,12 +22,12 @@ const App: React.FC = () => {
 
   const renderView = () => {
     switch (currentView) {
-      case View.HOME: return <Home />;
+      case View.HOME: return <Home setView={setCurrentView} />;
       case View.ABOUT: return <About />;
       case View.PROJECTS: return <Projects />;
       case View.SKILLS: return <Skills />;
       case View.EXPERIENCE: return <Experience />;
-      default: return <Home />;
+      default: return <Home setView={setCurrentView} />;
     }
   };
 

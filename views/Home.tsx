@@ -1,7 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
+import { View } from '../App';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  setView?: (view: View) => void;
+}
+
+const Home: React.FC<HomeProps> = ({ setView }) => {
   const [displayedName, setDisplayedName] = useState('');
   const fullName = 'Harshit Patro';
 
@@ -51,12 +56,12 @@ const Home: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-          <button className="group relative px-10 py-4 bg-primary text-white font-bold uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
+          <button onClick={() => setView?.(View.PROJECTS)} className="group relative px-10 py-4 bg-primary text-white font-bold uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
             <span className="relative z-10">View Projects</span>
           </button>
           
-          <a href="/Harshit-PatroRobotics.pdf" download className="group relative px-10 py-4 border border-white/20 text-white font-bold uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:border-primary hover:text-primary">
+          <a href="/Harshit-PatroRobotics.pdf" download="Harshit-PatroRobotics.pdf" className="group relative px-10 py-4 border border-white/20 text-white font-bold uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:border-primary hover:text-primary">
             <div className="absolute top-0 right-0 p-1 border-t-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="absolute bottom-0 left-0 p-1 border-b-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <span className="relative z-10 flex items-center gap-2">
