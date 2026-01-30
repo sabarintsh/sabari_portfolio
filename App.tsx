@@ -1,54 +1,44 @@
 
-import React, { useState } from 'react';
-import Home from './views/Home';
-import About from './views/About';
-import Projects from './views/Projects';
-import Skills from './views/Skills';
-import Experience from './views/Experience';
+import React from 'react';
 import Header from './components/Header';
+import Hero from './components/Hero';
+import Specs from './components/Specs';
+import Certifications from './components/Certifications';
+import Archives from './components/Archives';
+import History from './components/History';
 import Footer from './components/Footer';
-import HUDDecorator from './components/HUDDecorator';
-
-export enum View {
-  HOME = 'HOME',
-  ABOUT = 'ABOUT',
-  PROJECTS = 'PROJECTS',
-  SKILLS = 'SKILLS',
-  EXPERIENCE = 'EXPERIENCE'
-}
 
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>(View.HOME);
-
-  const renderView = () => {
-    switch (currentView) {
-      case View.HOME: return <Home setView={setCurrentView} />;
-      case View.ABOUT: return <About />;
-      case View.PROJECTS: return <Projects />;
-      case View.SKILLS: return <Skills />;
-      case View.EXPERIENCE: return <Experience />;
-      default: return <Home setView={setCurrentView} />;
-    }
-  };
-
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden bg-background-dark">
+    <div className="flex flex-col min-h-screen bg-stark-charcoal overflow-x-hidden">
       {/* Global Background Layer */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 grid-pattern opacity-30"></div>
-        <div className="absolute inset-0 radar-sweep opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background-dark/50 to-background-dark"></div>
-        <div className="scan-line opacity-10"></div>
-      </div>
-
-      <Header currentView={currentView} setView={setCurrentView} />
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-10 grid-bg bg-grid-pattern"></div>
       
-      <main className="relative z-10 flex-1 flex flex-col overflow-y-auto pt-20">
-        {renderView()}
+      <Header />
+      
+      <main className="flex-grow">
+        <section id="hero" className="min-h-screen flex items-center">
+          <Hero />
+        </section>
+
+        <section id="specs" className="min-h-screen py-24 bg-background-dark/30">
+          <Specs />
+        </section>
+
+        <section id="certifications" className="min-h-screen py-24">
+          <Certifications />
+        </section>
+
+        <section id="archives" className="min-h-screen py-24 bg-background-dark/30">
+          <Archives />
+        </section>
+
+        <section id="history" className="min-h-screen py-24 bg-surface-dark/20">
+          <History />
+        </section>
       </main>
 
       <Footer />
-      <HUDDecorator />
     </div>
   );
 };
