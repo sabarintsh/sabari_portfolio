@@ -6,31 +6,31 @@ const Certifications: React.FC = () => {
       id: 1,
       title: 'Product design',
       description: 'Product design, designing softwares - Solidworks, Catia - CADD center',
-      link: ''
+      link: 'https://drive.google.com/drive/folders/12VbhkkVpBRDFPGGIatBlEXV4mcdkqgn5?usp=sharing'
     },
     {
       id: 2,
       title: 'Parova Technologies',
       description: 'Drone basics, components and development',
-      link: ''
+      link: ' https://drive.google.com/drive/folders/1jQGM1HocqOBZg8m9ung0nrpAw7azBiLl?usp=sharing'
     },
     {
       id: 3,
       title: 'Sports and building Aerodynamics',
       description: 'Sports and building Aerodynamics - Course',
-      link: ''
+      link: 'https://drive.google.com/drive/folders/1KG6FyoMtvVZsykPAz_59bu9ILOCd3uA9?usp=sharing'
     },
     {
       id: 4,
       title: 'Introduction to the Internet Of Things (IoT)',
       description: 'Introduction to the Internet Of Things (IoT) and embedded systems',
-      link: ''
+      link: 'https://drive.google.com/drive/folders/1InvgXcSIO9p0kSKBH_SoXcbrjAIqDeek?usp=sharing'
     },
     {
       id: 5,
       title: 'Hacking and patching',
       description: 'Hacking and patching - Course',
-      link: ''
+      link: ' https://drive.google.com/drive/folders/19sKRJDG5Rwg3mauAnI0rMutQIfUh3v9W?usp=sharing'
     }
   ];
 
